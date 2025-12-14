@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Peta Desa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+    }
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      background-color: #34495e;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: #fff;
+      padding: 12px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #1abc9c;
+    }
+    section {
+      padding: 20px;
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+    footer {
+      background-color: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Website Informasi Peta Desa</h1>
+    <p>Desa Sokanegara & Kecamatan Purwokerto Timur</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('beranda')">Beranda</a>
+    <a href="#" onclick="showSection('sokanegara')">Peta Desa Sokanegara</a>
+    <a href="#" onclick="showSection('purwokerto')">Peta Kecamatan Purwokerto Timur</a>
+  </nav>
+
+  <section id="beranda" class="active">
+  <h2>Beranda</h2>
+  <p>
+    <b>Kecamatan Purwokerto Timur</b> merupakan salah satu kecamatan di Kabupaten Banyumas
+    yang berada di wilayah perkotaan. Kawasan ini memiliki posisi yang strategis karena
+    dekat dengan pusat pemerintahan, pendidikan, perdagangan, serta berbagai fasilitas
+    umum. Perkembangan wilayah Purwokerto Timur terus meningkat seiring dengan
+    pertumbuhan penduduk dan aktivitas sosial ekonomi masyarakat.
+  </p>
+
+  <p>
+    <b>Desa Sokanegara</b> adalah salah satu desa yang berada di Kecamatan Purwokerto Timur.
+    Desa ini memiliki karakter wilayah yang beragam, meliputi kawasan permukiman,
+    fasilitas umum, serta jaringan jalan yang mendukung mobilitas penduduk.
+    Desa Sokanegara berperan penting dalam mendukung kegiatan sosial, ekonomi,
+    dan pelayanan masyarakat di wilayah Purwokerto Timur.
+  </p>
+
+  <p>
+    Website ini menyajikan <b>peta interaktif</b> Desa Sokanegara dan Kecamatan Purwokerto Timur
+    yang dibuat menggunakan <b>QGIS</b> dan dipublikasikan ke web melalui plugin
+    <b>qgis2web</b>. Peta ini diharapkan dapat membantu pengguna dalam memahami
+    kondisi geografis dan tata wilayah secara visual, informatif, dan mudah diakses.
+  </p>
+</section>
+
+  <section id="sokanegara">
+    <h2>Peta Desa Sokanegara</h2>
+    <!-- Ganti src dengan file index.html hasil export qgis2web -->
+    <iframe src="peta_sokanegara/sokanegara.html"></iframe>
+  </section>
+
+  <section id="purwokerto">
+    <h2>Peta Kecamatan Purwokerto Timur</h2>
+    <!-- Ganti src dengan file index.html hasil export qgis2web -->
+    <iframe src="peta_purwokerto_timur/index.html"></iframe>
+  </section>
+
+  <footer>
+    <p>© 2025 Website Peta Desa | Dibuat dengan VS Code</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
